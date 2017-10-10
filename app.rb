@@ -12,11 +12,9 @@ class App < Sinatra::Base
   end
 
   post '/checkout' do
-    session[:item] = @item
+    session[:item] = params[:item]
     @session = session
-    #add params to the session hash
-    #key: item, value: item user entered to the purchase
-    #store session hash as an instance variable
+    erb :checkout
   end
 
 end
