@@ -10,4 +10,13 @@ class App < Sinatra::Base
   get '/' do
     erb :index
   end
+
+  post '/checkout' do 
+    session["item"] = @item 
+    @session = session
+    #add params to the session hash
+    #key: item, value: item user entered to the purchase
+    #store session hash as an instance variable 
+  end 
+
 end
